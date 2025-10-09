@@ -1,1 +1,1 @@
-ola
+Olá! Seja bem-vindo(a) ao meu repositório de arquivos acadêmicos. Aqui são disponibilizados os arquivos e atividades que estou desenvolvendo ao longo do período da faculdade. As pastas e os arquivos podem ser modificados constantemente, visando aprimorar a organização e a compreensão do conteúdo por parte de quem visita este repositório.

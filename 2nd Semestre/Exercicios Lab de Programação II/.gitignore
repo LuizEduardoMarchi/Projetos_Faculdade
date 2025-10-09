@@ -1,0 +1,6 @@
+
+/output/
+/config/
+
+*.exe
+*.json
