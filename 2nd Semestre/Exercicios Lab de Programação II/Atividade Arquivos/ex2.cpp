@@ -21,7 +21,7 @@ int main() // Funcao principal
     // Verifica a existencia de um arquivo
     if (arquivo == NULL)
     {
-        cout << "Arquivo nao encontrado!!";
+        cout << "ERRO, Arquivo nao encontrado!!";
         return 1;
     }
   
