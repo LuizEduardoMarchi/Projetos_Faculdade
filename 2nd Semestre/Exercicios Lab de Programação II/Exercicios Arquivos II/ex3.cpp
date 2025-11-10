@@ -5,13 +5,13 @@ using namespace std;
 
 int main()
 {
-    FILE *registro_cliente;
+     FILE *registro_cliente;
     FILE *conta_bancaria;
 
-    char registro[100],cliente[5];
+    char registro[100],cod_cliente[5];
     int num_conta, num_cliente, cod;
     float saldo;
-    int codigo[100];
+    int codigo;
     int k = 0;
 
     conta_bancaria = fopen("conta_bancaria.txt", "a+");
@@ -20,27 +20,32 @@ int main()
     if (registro_cliente == NULL) return 1;
     if (conta_bancaria == NULL) return 1;
 
-    cout << "Digite o codigo do cliente a ser criado uma conta bancaria: ";
-    cin >> cod;
-
     while (fgets(registro, 100, registro_cliente) != NULL)
     {
         int i = 0;
         int j = 0;
-        while(registro[i] != ' ' && registro[i] != '\0' && registro[i] != '\n')
+        
+        while(registro[i] != ' ')
         {
-            cliente[j++] = registro[i++]; 
+            cod_cliente[j++] = registro[i++]; 
         }
-        cliente[j] = '\0';
+        cod_cliente[j] = '\0';
 
-        codigo[k++] = atoi(cliente);
+        num_cliente = atoi(cod_cliente);
+        fprintf(conta_bancaria, "%d \n", num_cliente);
+        k++;
     }
+
     for(int l = 0; l < k; l++)
     {
-        cout << codigo << endl;
-    }
+        cout << "Digite o codigo da conta bancaria a ser criado: ";
+        cin >> codigo;
 
-    fprintf(conta_bancaria, "%d %d %f", cod,num_cliente,saldo);
+        cout << "Digite o saldo do cliente";
+        cin >> saldo;
+
+        fprintf(conta_bancaria, "%d %.2f",codigo,saldo);
+    }
 
     fclose(conta_bancaria);
     fclose(registro_cliente);
